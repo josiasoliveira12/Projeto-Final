@@ -7,6 +7,10 @@ extends CharacterBody2D
 
 var ultima_direcao: String = "sul"
 
+# Controle da distância percorrida
+var distancia_percorrida: float = 0.0
+var tamanho_passo: float = 32.0
+
 
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
@@ -54,7 +58,7 @@ func _physics_process(_delta):
 
 	# Executa a animação correspondente
 	if animacao_andar != "":
-		ultima_direcao = animacao_andar.replace("andar_", "")
+		ultima_direcao = animacao_andar
 
 		if sprite.animation != animacao_andar:
 			sprite.play(animacao_andar)
@@ -66,4 +70,17 @@ func _physics_process(_delta):
 		if sprite.animation != animacao_parado:
 			sprite.play(animacao_parado)
 
+	# Guarda a posição antes do movimento
+	var posicao_anterior = global_position
+
 	move_and_slide()
+
+	# Calcula a distância realmente percorrida
+	var distancia_movida = posicao_anterior.distance_to(global_position)
+
+	distancia_percorrida += distancia_movida
+
+
+# Retorna a quantidade de passos completos percorridos
+func obter_passos_percorridos() -> int:
+	return int(distancia_percorrida / tamanho_passo)
