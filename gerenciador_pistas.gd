@@ -5,7 +5,7 @@ extends Node
 @onready var pontos_das_pistas = $"../PontosDasPistas"
 @onready var jogador = $"../player"
 @onready var texto_instrucao: Label = $"../Interface/PainelInstrucao/TextoInstrucao"
-
+@onready var texto_descoberta: Label = $"../Interface/PainelInstrucao/TextoDescoberta"
 # Configurações das pistas
 const TOTAL_PISTAS = 5
 const RAIO_PROXIMIDADE = 32.0
@@ -21,6 +21,14 @@ const DISTANCIA_MINIMA = 250.0
 const DISTANCIA_MINIMA_JOGADOR = 300.0
 const MAX_TENTATIVAS = 500
 
+# História revelada durante a caça ao tesouro
+var mensagens_descoberta = [
+	"Meu diário começa aqui... Dizem que escondi meu maior tesouro nesta ilha.",
+	"Encontrei uma antiga marca de piratas. O caminho ainda guarda muitos segredos.",
+	"Uma inscrição revela que o tesouro foi protegido por um antigo capitão.",
+	"Estou cada vez mais perto. A próxima pista guarda o segredo da localização.",
+	"Finalmente encontrei a última indicação! O tesouro está próximo."
+]
 # Armazena as posições sorteadas
 var objetivos: Array[Vector2] = []
 
@@ -185,16 +193,29 @@ func _physics_process(_delta):
 
 
 # Avança para o próximo objetivo
+
 func encontrar_objetivo():
 	if pista_atual < TOTAL_PISTAS:
 		print("Pista ", pista_atual + 1, " encontrada!")
+
+		# Mostra a história da pista encontrada
+		texto_descoberta.text = mensagens_descoberta[pista_atual]
+		texto_descoberta.visible = true
+
+		# Avança para a próxima pista
+		pista_atual += 1
+
 	else:
 		print("TESOURO ENCONTRADO! Você venceu!")
 
-	pista_atual += 1
+		texto_descoberta.text = "Você encontrou o lendário tesouro do capitão!"
+		texto_descoberta.visible = true
 
-	# Atualiza imediatamente a instrução
+		pista_atual += 1
+
+	# Atualiza a orientação
 	atualizar_instrucao()
+
 
 
 # Calcula a direção do jogador até o próximo objetivo

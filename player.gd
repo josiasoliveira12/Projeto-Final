@@ -12,6 +12,9 @@ var distancia_percorrida: float = 0.0
 var tamanho_passo: float = 32.0
 
 
+var vidas: int = 3
+var pode_receber_dano: bool = true
+
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 	var animacao_andar = ""
@@ -80,6 +83,25 @@ func _physics_process(_delta):
 
 	distancia_percorrida += distancia_movida
 
+
+func receber_dano():
+	if not pode_receber_dano:
+		return
+
+	vidas -= 1
+
+	# Atualiza o placar
+	get_node("../Interface/TextoVida").text = "VIDA " + str(vidas)
+
+	pode_receber_dano = false
+
+	# Aguarda 1,5 segundo antes de permitir outro dano
+	await get_tree().create_timer(1.5).timeout
+
+	pode_receber_dano = true
+
+	if vidas <= 0:
+		print("GAME OVER!")
 
 # Retorna a quantidade de passos completos percorridos
 func obter_passos_percorridos() -> int:

@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://nwgaxks4bvrf"]
 
 [ext_resource type="Script" uid="uid://cvbfy13aq46jn" path="res://player.gd" id="1_n7ghd"]
-[ext_resource type="Texture2D" uid="uid://cspsq2ql2kisa" path="res://Assents/leste.png" id="2_nvl01"]
-[ext_resource type="Texture2D" uid="uid://bh3bj25kxpex6" path="res://Assents/nordeste.png" id="3_ivps1"]
-[ext_resource type="Texture2D" uid="uid://dinwrnkfd3k8n" path="res://Assents/noroeste.png" id="4_urp6f"]
-[ext_resource type="Texture2D" uid="uid://dxo1rrtx7m4fi" path="res://Assents/norte.png" id="5_bwjto"]
-[ext_resource type="Texture2D" uid="uid://g4qrreangatm" path="res://Assents/oeste.png" id="6_606se"]
-[ext_resource type="Texture2D" uid="uid://b6ge1tpry7u6k" path="res://Assents/parado_leste.png" id="7_op7ga"]
-[ext_resource type="Texture2D" uid="uid://bs18oplehmppv" path="res://Assents/sudeste.png" id="8_op7ga"]
-[ext_resource type="Texture2D" uid="uid://bs0h61bvnvtyd" path="res://Assents/parado_nordeste.png" id="8_q13i1"]
-[ext_resource type="Texture2D" uid="uid://chojynfilmmk2" path="res://Assents/parado_noroeste.png" id="9_pylmc"]
-[ext_resource type="Texture2D" uid="uid://clq36vxdox15t" path="res://Assents/sudoeste.png" id="9_q13i1"]
-[ext_resource type="Texture2D" uid="uid://bpjrxjms5nnvp" path="res://Assents/parado_norte.png" id="10_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://g6dwkng4pdt8" path="res://Assents/sul.png" id="10_pylmc"]
-[ext_resource type="Texture2D" uid="uid://bfh43a8yry5h5" path="res://Assents/parado_oeste.png" id="11_5tmop"]
-[ext_resource type="Texture2D" uid="uid://ds15fdd4210ks" path="res://Assents/parado_sudeste.png" id="12_7ahtn"]
-[ext_resource type="Texture2D" uid="uid://b8x68h4xmd36w" path="res://Assents/parado_sudoeste.png" id="13_7lmhl"]
-[ext_resource type="Texture2D" uid="uid://8m1hhwxxy5vk" path="res://Assents/parado_sul.png" id="14_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://kuredhc4fa1e" path="res://Assents/leste.png" id="2_nvl01"]
+[ext_resource type="Texture2D" uid="uid://tu56snlat2n1" path="res://Assents/nordeste.png" id="3_ivps1"]
+[ext_resource type="Texture2D" uid="uid://bx27ybwq5xyqe" path="res://Assents/noroeste.png" id="4_urp6f"]
+[ext_resource type="Texture2D" uid="uid://bk6qr4dru0u5e" path="res://Assents/norte.png" id="5_bwjto"]
+[ext_resource type="Texture2D" uid="uid://nf5j2un0cyw" path="res://Assents/oeste.png" id="6_606se"]
+[ext_resource type="Texture2D" uid="uid://cyrxf5gerx2gl" path="res://Assents/parado_leste.png" id="7_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dv7quw0myyw20" path="res://Assents/sudeste.png" id="8_op7ga"]
+[ext_resource type="Texture2D" uid="uid://dwkliwd5m2sne" path="res://Assents/parado_nordeste.png" id="8_q13i1"]
+[ext_resource type="Texture2D" uid="uid://b3ino1cfy4wlm" path="res://Assents/parado_noroeste.png" id="9_pylmc"]
+[ext_resource type="Texture2D" uid="uid://cf65la3aadkwt" path="res://Assents/sudoeste.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://bpiuahcj8qax0" path="res://Assents/parado_norte.png" id="10_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://b1q3cjcomlu2r" path="res://Assents/sul.png" id="10_pylmc"]
+[ext_resource type="Texture2D" uid="uid://chovhblfaqlns" path="res://Assents/parado_oeste.png" id="11_5tmop"]
+[ext_resource type="Texture2D" uid="uid://c12jpk8prughq" path="res://Assents/parado_sudeste.png" id="12_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://cvbqsyhwmrh0p" path="res://Assents/parado_sudoeste.png" id="13_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://cx7nqtof3sw58" path="res://Assents/parado_sul.png" id="14_dx0e4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nennk"]
 atlas = ExtResource("2_nvl01")
@@ -549,9 +549,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_umwmv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umwmv"]
+radius = 18.0
+height = 42.0
 
 [node name="player" type="CharacterBody2D" unique_id=14681330]
+position = Vector2(-3, -11)
 script = ExtResource("1_n7ghd")
 metadata/_edit_group_ = true
 
@@ -562,6 +565,6 @@ sprite_frames = SubResource("SpriteFrames_umwmv")
 animation = &"parado_sudeste"
 
 [node name="colisao" type="CollisionShape2D" parent="." unique_id=11665455]
-shape = SubResource("CircleShape2D_umwmv")
+shape = SubResource("CapsuleShape2D_umwmv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1997645799]
