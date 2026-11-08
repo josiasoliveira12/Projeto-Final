@@ -89,9 +89,10 @@ func receber_dano():
 		return
 
 	vidas -= 1
+	get_tree().current_scene.get_node("GerenciadorPistas").atualizar_pontuacao(-100)
 
 	# Atualiza o placar
-	get_node("../Interface/TextoVida").text = "VIDA " + str(vidas)
+	get_node("../Interface/TextoVida").text = "VIDA: " + str(vidas)
 
 	pode_receber_dano = false
 

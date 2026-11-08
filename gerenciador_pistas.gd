@@ -6,6 +6,18 @@ extends Node
 @onready var jogador = $"../player"
 @onready var texto_instrucao: Label = $"../Interface/PainelInstrucao/TextoInstrucao"
 @onready var texto_descoberta: Label = $"../Interface/PainelInstrucao/TextoDescoberta"
+
+
+# Sistema de pontuação
+var pontuacao: int = 0
+
+@onready var texto_pontuacao: Label = $"../Interface/TextoPontuacao"
+
+
+func atualizar_pontuacao(valor: int):
+	pontuacao += valor
+	texto_pontuacao.text = "Pontos: " + str(pontuacao)
+
 # Configurações das pistas
 const TOTAL_PISTAS = 5
 const RAIO_PROXIMIDADE = 32.0
@@ -194,27 +206,30 @@ func _physics_process(_delta):
 
 # Avança para o próximo objetivo
 
+
 func encontrar_objetivo():
 	if pista_atual < TOTAL_PISTAS:
 		print("Pista ", pista_atual + 1, " encontrada!")
 
-		# Mostra a história da pista encontrada
+		atualizar_pontuacao(100)
+
 		texto_descoberta.text = mensagens_descoberta[pista_atual]
 		texto_descoberta.visible = true
 
-		# Avança para a próxima pista
 		pista_atual += 1
 
 	else:
 		print("TESOURO ENCONTRADO! Você venceu!")
+
+		atualizar_pontuacao(200)
 
 		texto_descoberta.text = "Você encontrou o lendário tesouro do capitão!"
 		texto_descoberta.visible = true
 
 		pista_atual += 1
 
-	# Atualiza a orientação
 	atualizar_instrucao()
+
 
 
 
