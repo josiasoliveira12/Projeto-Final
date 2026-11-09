@@ -38,10 +38,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -267.0
-offset_top = -241.0
-offset_right = -124.0
-offset_bottom = -96.0
+offset_left = -286.0
+offset_top = -236.0
+offset_right = -143.0
+offset_bottom = -91.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/separation = 26
@@ -67,11 +67,14 @@ text = "Sobre
 
 [node name="Titulo" type="Label" parent="." unique_id=703165424]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 14.0
-offset_right = 1088.0
-offset_bottom = 62.0
-theme_override_font_sizes/font_size = 32
+offset_left = 763.0
+offset_top = -6.0
+offset_right = 1146.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.827222, 0, 0)
+theme_override_colors/font_outline_color = Color(0.015625, 0.0064086914, 0.0064086914, 1)
+theme_override_font_sizes/font_size = 45
 text = "A Ilha Do Tesouro"
 horizontal_alignment = 1
 
