@@ -277,13 +277,13 @@ func atualizar_instrucao():
 	]
 
 	if pista_atual < TOTAL_PISTAS:
-		texto_instrucao.text = mensagens[pista_atual] + "\n\n" + \
-			"Distância: %d passos para %s." % [
+		texto_instrucao.text = mensagens[pista_atual] + \
+			"  Distância: %d passos para %s." % [
 				passos,
 				direcao
 			]
 	else:
-		texto_instrucao.text = "Você encontrou as cinco pistas!\n\n" + \
+		texto_instrucao.text = "Você encontrou as cinco pistas! " + \
 			"O tesouro está a %d passos para %s." % [
 				passos,
 				direcao

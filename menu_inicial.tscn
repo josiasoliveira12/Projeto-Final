@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://ce44num6dyxkv"]
+
+[ext_resource type="Script" uid="uid://cyu7cggubcsdb" path="res://menu_inicial.gd" id="1_3exob"]
+[ext_resource type="Texture2D" uid="uid://camrkxpa60523" path="res://Assents/Fundo_menu.png" id="2_eap13"]
+
+[node name="MenuInicial" type="Control" unique_id=2013024824]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3exob")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1073812505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eap13")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Interface" type="Control" parent="." unique_id=1242752791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PainelBotoes" type="VBoxContainer" parent="Interface" unique_id=133745465]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -267.0
+offset_top = -241.0
+offset_right = -124.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="Jogar" type="Button" parent="Interface/PainelBotoes" unique_id=1261806813]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+text = "Jogar
+"
+
+[node name="Como Jogar" type="Button" parent="Interface/PainelBotoes" unique_id=1152965136]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+text = "Como Jogar
+"
+
+[node name="Sobre" type="Button" parent="Interface/PainelBotoes" unique_id=311881262]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.66015625, 0.13667297, 0.13667297, 1)
+text = "Sobre
+"
+
+[node name="Titulo" type="Label" parent="." unique_id=703165424]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 14.0
+offset_right = 1088.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 32
+text = "A Ilha Do Tesouro"
+horizontal_alignment = 1
+
+[node name="JanelaComoJogar" type="AcceptDialog" parent="." unique_id=598620453]
+title = "Como Jogar"
+dialog_text = "OBJETIVO:
+Explore a ilha e encontre as cinco pistas para descobrir a localização do tesouro, 
+mas cuidado essa ilha tambem é conhecida como ilha do veneno.
+
+CONTROLES:
+8 - Norte
+2 - Sul
+6 - Leste
+4 - Oeste
+9 - Nordeste
+7 - Noroeste
+3 - Sudeste
+1 - Sudoeste
+
+COMO JOGAR:
+• Siga as indicações de direção e distância.
+• Encontre as cinco pistas.
+• Encontre o tesouro escondido.
+• Evite as cobras.
+• Colete moedas para ganhar pontos.
+
+PONTUAÇÃO:
+Cada pista: +100 pontos
+Tesouro: +200 pontos
+Moeda: +50 pontos
+Perder uma vida: -100 pontos"
+
+[node name="JanelaSobre" type="AcceptDialog" parent="." unique_id=984135320]
+title = "Sobre o jogo"
+dialog_text = "A LENDA DO TESOURO PERDIDO
+
+Dizem que um antigo capitão pirata conhecido com Fli, 
+conhecido por sua ganância e astúcia, 
+escondeu seu maior tesouro em uma ilha distante.
+Antes de desaparecer, espalhou cinco pistas pelo território, 
+protegendo o caminho com armadilhas e cobras.
+Agora, cabe a você explorar a ilha, decifrar as pistas 
+e encontrar  o lendário tesouro do capitão.
+
+Prepare-se para uma grande aventura!"
+
+[connection signal="pressed" from="Interface/PainelBotoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Interface/PainelBotoes/Como Jogar" to="." method="_on_como_jogar_pressed"]
+[connection signal="pressed" from="Interface/PainelBotoes/Sobre" to="." method="_on_sobre_pressed"]
