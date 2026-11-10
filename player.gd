@@ -85,24 +85,35 @@ func _physics_process(_delta):
 
 
 func receber_dano():
-	if not pode_receber_dano: 
-		return
-
-	vidas -= 1
-	get_tree().current_scene.get_node("GerenciadorPistas").atualizar_pontuacao(-100)
-
-	# Atualiza o placar
-	get_node("../Interface/TextoVida").text = "Vida: " + str(vidas)
-	if vidas <= 0:
-		get_tree().change_scene_to_file("res://tela_derrota.tscn")
+	if not is_inside_tree() or not pode_receber_dano:
 		return
 
 	pode_receber_dano = false
+	vidas -= 1
 
-	# Aguarda 1,5 segundo antes de permitir outro dano
+	# Atualiza a pontuação
+	get_node("../GerenciadorPistas").atualizar_pontuacao(-100)
+
+	# Atualiza as vidas
+	var texto_vida = get_node_or_null("../Interface/TextoVida")
+
+	if texto_vida != null:
+		texto_vida.text = "Vida: " + str(vidas)
+
+	# Verifica Game Over
+	if vidas <= 0:
+		var arvore = get_tree()
+
+		if arvore != null:
+			arvore.call_deferred("change_scene_to_file", "res://tela_derrota.tscn")
+
+		return
+
+	# Aguarda antes de permitir outro dano
 	await get_tree().create_timer(1.5).timeout
 
-	pode_receber_dano = true
+	if is_inside_tree():
+		pode_receber_dano = true
 		
 	
 
