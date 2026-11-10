@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c044w8jdebjvo"]
+
+[ext_resource type="Script" uid="uid://dmlkal8ej3jup" path="res://tela_derrota.gd" id="1_6l0yx"]
+[ext_resource type="Texture2D" uid="uid://bdpa0igindqga" path="res://Assents/FundoGameOver.png" id="1_pm3wf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fmm73"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sabu6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40ehu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnt0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66yay"]
+
+[node name="TelaDerrota" type="Control" unique_id=878833641]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6l0yx")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1760926482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pm3wf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=360754656]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -97.0
+offset_right = 172.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fmm73")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sabu6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_40ehu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dnt0t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_66yay")
+
+[connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

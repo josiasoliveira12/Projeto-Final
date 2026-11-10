@@ -85,14 +85,17 @@ func _physics_process(_delta):
 
 
 func receber_dano():
-	if not pode_receber_dano:
+	if not pode_receber_dano: 
 		return
 
 	vidas -= 1
 	get_tree().current_scene.get_node("GerenciadorPistas").atualizar_pontuacao(-100)
 
 	# Atualiza o placar
-	get_node("../Interface/TextoVida").text = "VIDA: " + str(vidas)
+	get_node("../Interface/TextoVida").text = "Vida: " + str(vidas)
+	if vidas <= 0:
+		get_tree().change_scene_to_file("res://tela_derrota.tscn")
+		return
 
 	pode_receber_dano = false
 
@@ -100,9 +103,8 @@ func receber_dano():
 	await get_tree().create_timer(1.5).timeout
 
 	pode_receber_dano = true
-
-	if vidas <= 0:
-		print("GAME OVER!")
+		
+	
 
 # Retorna a quantidade de passos completos percorridos
 func obter_passos_percorridos() -> int:
