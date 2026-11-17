@@ -222,13 +222,16 @@ func encontrar_objetivo():
 		print("TESOURO ENCONTRADO! Você venceu!")
 
 		atualizar_pontuacao(200)
+		
+		ResultadoJogo.pontuacao_final = pontuacao
+		ResultadoJogo.vidas_finais = jogador.vidas
 
-		texto_descoberta.text = "Você encontrou o lendário tesouro do capitão!"
-		texto_descoberta.visible = true
+		get_tree().call_deferred(
+		"change_scene_to_file",
+        "res://tela_vitoria.tscn"
+		)
 
-		pista_atual += 1
-
-	atualizar_instrucao()
+		return
 
 
 

@@ -90,6 +90,7 @@ func receber_dano():
 
 	pode_receber_dano = false
 	vidas -= 1
+	
 
 	# Atualiza a pontuação
 	get_node("../GerenciadorPistas").atualizar_pontuacao(-100)

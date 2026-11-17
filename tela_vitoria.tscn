@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bteo4b152068e"]
+
+[ext_resource type="Script" uid="uid://c6bo2rxocxcgg" path="res://tela_vitoria.gd" id="1_nsdld"]
+[ext_resource type="Texture2D" uid="uid://b83mikr6df1a4" path="res://Assents/FundoVitoria.png" id="1_vetyl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsdld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sw3hn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_po3aj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0m0h4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yxaj2"]
+
+[node name="TelaVitoria" type="Control" unique_id=8716904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsdld")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=858683945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vetyl")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=8727026]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 543.0
+offset_right = 729.0
+offset_bottom = 601.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nsdld")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sw3hn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_po3aj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0m0h4")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxaj2")
+
+[node name="TextoPontuacaoFinal" type="Label" parent="." unique_id=37518684]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 452.0
+offset_right = 778.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Pontuação Final: 0"
+
+[node name="TextoVidaRestantes" type="Label" parent="." unique_id=1276371296]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 450.0
+offset_right = 491.0
+offset_bottom = 478.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Vida restante: 3"
+
+[node name="Texto" type="Label" parent="." unique_id=1013231880]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 290.0
+offset_right = 811.0
+offset_bottom = 430.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "                                PARABÉNS, PIRATA!
+Você enfrentou os perigos da ilha, superou todos 
+os desafios e encontrou o lendário tesouro!
+Sua aventura entrou para a história. Que os ventos 
+estejam sempre a seu favor!"
+
+[connection signal="pressed" from="BotaoVoltar" to="." method="_on_botao_voltar_pressed"]
