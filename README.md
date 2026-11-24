@@ -350,6 +350,7 @@ Algumas funcionalidades que podem ser consideradas em versões futuras:
 - Criar níveis de dificuldade.
 - Desenvolver um sistema de recordes.
 - Adicionar novas missões e histórias.
+- Adicionar animações ao encontrar as pistas e o tesouro.
 
 ---
 
