@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo - caça ao tesouro"
-run/main_scene="uid://nwgaxks4bvrf"
+run/main_scene="uid://ce44num6dyxkv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
