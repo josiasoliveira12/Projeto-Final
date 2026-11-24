@@ -24,9 +24,7 @@ Durante a exploração, o jogador deve evitar as cobras, coletar moedas e admini
 - [13. Telas e navegação](#13-telas-e-navegação)
 - [14. Organização dos arquivos](#14-organização-dos-arquivos)
 - [15. Funcionamento interno](#15-funcionamento-interno)
-- [16. Testes recomendados](#16-testes-recomendados)
-- [17. Melhorias futuras](#17-melhorias-futuras)
-- [18. Créditos e informações acadêmicas](#18-créditos-e-informações-acadêmicas)
+- [16. Melhorias futuras](#16-melhorias-futuras)
 
 ---
 
@@ -341,31 +339,7 @@ Quando o tesouro é encontrado, o gerenciador copia os valores da partida para e
 
 As mudanças entre as telas são realizadas por meio de `get_tree().change_scene_to_file()`. No encerramento da partida, a troca para a tela de vitória ou derrota é solicitada de forma adiada com `call_deferred()`.
 
-## 16. Testes recomendados
-
-A lista abaixo pode ser utilizada para verificar as funcionalidades antes da entrega:
-
-- [ ] O projeto abre na Godot sem erros.
-- [ ] O menu inicial é exibido conforme a configuração de execução.
-- [ ] O botão Jogar abre a fase.
-- [ ] A janela Como Jogar apresenta as instruções.
-- [ ] A janela Sobre apresenta a história.
-- [ ] O pirata se movimenta nas oito direções.
-- [ ] O pirata mantém a última direção ao parar.
-- [ ] As colisões com os obstáculos funcionam.
-- [ ] As cinco pistas são sorteadas.
-- [ ] Os objetivos respeitam as verificações de distância e obstáculos.
-- [ ] O painel informa direção e distância.
-- [ ] Cada pista adiciona 100 pontos.
-- [ ] A moeda adiciona 50 pontos.
-- [ ] A cobra causa perda de vida e 100 pontos.
-- [ ] A partida termina ao perder as três vidas.
-- [ ] O tesouro é encontrado somente depois das cinco pistas.
-- [ ] A vitória adiciona 200 pontos.
-- [ ] A tela de vitória apresenta pontuação e vidas.
-- [ ] Os botões de retorno levam ao menu inicial.
-
-## 17. Melhorias futuras
+## 16. Melhorias futuras
 
 Algumas funcionalidades que podem ser consideradas em versões futuras:
 
@@ -376,20 +350,6 @@ Algumas funcionalidades que podem ser consideradas em versões futuras:
 - Criar níveis de dificuldade.
 - Desenvolver um sistema de recordes.
 - Adicionar novas missões e histórias.
-
-## 18. Créditos e informações acadêmicas
-
-**Projeto:** Ilha do Tesouro  
-**Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Sul de Minas Gerais — IFSULDEMINAS  
-**Campus:** Machado  
-**Curso:** Sistemas de Informação  
-**Disciplina:** [Preencher com o nome da disciplina]  
-**Professor(a):** [Preencher com o nome do(a) professor(a)]  
-**Desenvolvedor(es):** [Preencher com o(s) nome(s)]
-
-### Créditos dos recursos visuais
-
-Preencha esta seção com os autores, sites e licenças dos sprites, imagens, fundos e demais recursos externos utilizados no jogo, conforme a origem de cada material.
 
 ---
 
